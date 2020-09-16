@@ -38,11 +38,13 @@ import Data.Ratio ((%))
   simpler parts of xmonad's behavior and are straightforward to tweak.
 -}
 
-myModMask            = mod4Mask       -- changes the mod key to "super"
+-- myModMask            = mod4Mask       -- changes the mod key to "super"
+myModMask            = mod1Mask
 myFocusedBorderColor = "#ff0000"      -- color of focused border
 myNormalBorderColor  = "#cccccc"      -- color of inactive border
 myBorderWidth        = 1              -- width of border around windows
-myTerminal           = "gnome-terminal"   -- which terminal software to use
+--myTerminal           = "gnome-terminal"   -- which terminal software to use
+myTerminal           = "rxvt-unicode"
 
 {-
   Xmobar configuration variables. These settings control the appearance
@@ -89,7 +91,7 @@ myWorkspaces =
     "0:VM",    "Extr1", "Extr2"
   ]
 
-startupWorkspace = "5:Dev"  -- which workspace do you want to be on after launch?
+startupWorkspace = "1:Term"  -- which workspace do you want to be on after launch?
 
 {-
   Layout configuration. In this section we identify which xmonad
@@ -254,6 +256,7 @@ myManagementHooks = [
   , className =? "Gnome-calculator" --> doFloat
   , (className =? "Slack") --> doF (W.shift "7:Chat")
   , (className =? "Gimp-2.8") --> doF (W.shift "9:Pix")
+  , (className =? "Brave-browser-beta") --> doF (W.shift "6:Web")
   ]
 
 
