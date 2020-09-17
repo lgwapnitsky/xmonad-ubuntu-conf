@@ -257,6 +257,7 @@ myManagementHooks = [
   , (className =? "Slack") --> doF (W.shift "7:Chat")
   , (className =? "Gimp-2.8") --> doF (W.shift "9:Pix")
   , (className =? "Brave-browser-beta") --> doF (W.shift "6:Web")
+  , (className =? "git-cola") --> doF (W.shift "5:Dev")
   ]
 
 
