@@ -32,7 +32,6 @@ fi
 #fi
 
 if [ -z "$(pgrep albert)" ] ; then
-    sleep 30
     albert &
 fi
 
