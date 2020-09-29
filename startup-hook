@@ -33,6 +33,14 @@ fi
 
 if [ -z "$(pgrep albert)" ] ; then
     albert &
+else
+    killall albert
+    albert &
+fi
+
+# gnome policykit
+if [ -z "$( polkit-gnome-authentication-agent-1)" ] ; then
+    /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 &
 fi
 
 # On login, we unlock the ssh keychain so we're not prompted for
